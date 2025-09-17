@@ -48,7 +48,7 @@ use crate::read::{
     AsyncUpgraded, IncomingStream, JsonLineDecoder, NewlineLogOutputDecoder, StreamReader,
 };
 use crate::uri::Uri;
-#[cfg(all(feature = "pipe", windows))]
+#[cfg(all(feature = "pipe", target_os = "windows"))]
 use hyper_named_pipe::NamedPipeConnector;
 
 use crate::auth::{base64_url_encode, DockerCredentialsHeader};
